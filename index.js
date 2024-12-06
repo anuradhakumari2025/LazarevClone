@@ -221,4 +221,13 @@ initializeScrollAnimations(".main", ".elem");
 locoScroll.on("scroll", () => ScrollTrigger.update());
 page6animation();
 
+const text = document.querySelector(".text p");
+const innerText = text.innerText;
+
+text.innerHTML = text.innerText
+  .split("")
+  .map((char, i) => {
+    return `<span style="transform: rotate(${i * 8.3}deg)">${char}</span>`;
+  })
+  .join("");
 
